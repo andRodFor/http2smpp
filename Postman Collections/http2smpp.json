@@ -1,0 +1,764 @@
+{
+	"info": {
+		"_postman_id": "9a475eea-3142-4b73-9fc9-ba83f3c66717",
+		"name": "HTTP2SMPP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SubmitSm",
+			"id": "db6e5614-e686-4ce5-96a2-ef8dc53a7a78",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"connector_id\": \"{{connector_id}}\",\r\n    \"src_address\": \"59894\",\r\n    \"dest_address\": \"59894640860\",\r\n    \"short_message\": \"Hello world\",\r\n    \"data_coding\": 0,\r\n    \"registered_delivery\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{URL}}/submitSm",
+				"description": "This operation allows you to send **single** or **multiple** sms.\n\n**VARIABLES:**\n\n| **Variables** | **Type** | **Detail** |\n| --- | --- | --- |\n| connector_id | string | Identifies the SMPP provider connector to be used for sending SMS. **(required)** |\n| dest_address | string | Address(es) of destinations more than one separated by comma \",\" **(required)** |\n| short_message | string | The sms message. **(required)** |\n| data_coding | int | Data coding or charset of the message. **(required)**  <br>0 = default SMPP. GSM7.  <br>3=Latin 1 (ISO-8859-1)  <br>4=Octet unspecified (8-bit binary) ISO-8859-9  <br>6=Cyrillic (ISO-8859-5)  <br>7=Latin/Hebrew (ISO-8859-8)  <br>8=ucs2 (UTF-16BE)  <br>16=Default Flash.  <br>24=Unicode Flash. |\n| src_address | string | Origin SMS address. |\n| registered_delivery | int | 0 = No SMSC Delivery Receipt requested **(default).**  <br>1 = MSC Delivery Receipt requested where final delivery outcome is delivery success or failure.  <br>2 = SMSC Delivery Receipt requested where the final delivery outcome is delivery failure.  <br>3 = MSC Delivery Receipt requested where final delivery outcome is delivery success |\n| schedule_delivery_time | string | The message must be sent from the moment it is received plus the configured relative time.  <br>relative time. check with your SMS provider.  <br>default \"\" empty.  <br>format: yyMMddhhmmss000R  <br>example:000003000000000R\" (3 days relative local SMSC time) |\n| validity_period | string | The relative maximum time that is accepted for sending or delivering the message, before it expires. In general it is from 1hs to 72 hs.  <br>Check with your SMS provider.  <br>default \"\" empty.  <br>format: yyMMddhhmmss000R  <br>example:000003000000000R\" (3 days relative local SMSC time) |\n| src_addr_ton | int | Source Address TON  <br>default 1.  <br>Check with your SMS provider. |\n| src_addr_npi | int | Source Address NPI  <br>default 1  <br>Check with your SMS provider. |\n| dest_addr_ton | int | Destination Address TON  <br>default 1  <br>Check with your SMS provider. |\n| dest_addr_npi | int | Destination Address NPI  <br>default 1  <br>Check with your SMS provider. |\n\n**LIST OF RESPONSE SUBMITSM ERRORS:**\n\n| **error_id** | **Detail** |\n| --- | --- |\n| 1 | Connector SMPP identifier is required.  <br>**connector_id** |\n| 2 | The destination address is required.  <br>**dest_address** |\n| 3 | The data coding is required or incorrect  <br>**data_coding** |\n| 4 | The source TON is incorrect  <br>**src_addr_ton** |\n| 5 | The source NPI is incorrect  <br>**src_addr_npi** |\n| 6 | The destination TON is incorrect  <br>**dest_addr_ton** |\n| 7 | The destination NPI is incorrect.  <br>**dest_addr_npi** |\n| 8 | The schedule delivery time is incorrect.  <br>**schedule_delivery_time** |\n| 9 | The valid period is incorrect.  <br>**validity_period** |\n| 10 | The registered delivery is incorrect.  <br>**registered_delivery** |\n| 11 | The short message is required.  <br>**short_message** |\n| 12 | SMPP provider does not support multism send. |\n| 13 | The message concatenation maximum is exceeded. |\n| 14 | The maximum number of addresses is exceeded. |\n| 15 | Not allowed area code |\n| 100 | Invalid connector.  <br>connector_id |\n| 101 | Disabled connector |\n| 102 | Connector not found. |\n| 103 | The connector could not establish a connection to the SMPP server. |\n| 104 | Internal error. Connector error. |"
+			},
+			"response": [
+				{
+					"id": "44c0a076-819a-40b7-8fe7-9ceea63e9853",
+					"name": "Successful Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"connector_id\": \"650b0abc01\",\r\n    \"src_addr\": \"59894\",\r\n    \"dest_address\": \"59894640860\",\r\n    \"short_message\": \"Hello world\",\r\n    \"data_coding\":0,\r\n    \"registered_delivery\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8083/submitSms"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "342"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"156-o8KU3c6ZdY78veBYJFkcF/at23k\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 31 Mar 2023 13:45:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"error_id\":0,\n    \"error_msg\":\"\",\n    //Message groupID Includes all messages id.\n    \"message_group_id\": \"3416a51eb9\",\n    //Values: short_message, payload and udh, sars for concatenations.\n    \"submit_mode\": \"short_message\", \n    //The data_coding\n    \"data_coding\": 0,\n    //If it is greater than 1, the message has been sent in multiple parts or concatenated.\n    \"split_size\": 1,\n    //The length of message.\n    \"message_size\": 11,\n    //Quatity of address destinataries.\n    \"qty_address\": 1,\n    //The number of submitsm or submitmulti sent to the smpp server terminator.\n    \"qty_submit_messages\": 1,\n    //It refers to the number of computable messages, that is, charged by the provider. In cases of long or concatenated messages, this value is increased regardless of the submit.\n    \"qty_computable_messages\": 1,\n    //Error/s computables.\n    \"qty_computable_errors\": 0,\n    \"src_address\":\"59894\",\n    //Array string of all addresses.\n    \"address\": [\n        \"59894640860\"\n    ],\n    //Array objet of result sent/s\n    \"result\": [\n        {\n            //In case of concatenation of the message, the part of the message sent is defined.\n            \"message_part\": \"\",\n            //In case of multiple sendings if the terminator rejects some addresses are defined in a string array.\n            \"unsuccess\": [],\n            //Provided by the terminator. 0=OK. Any other integer value defines a smpp error. See the error in the error_msg variable\n            \"command_status\": 0,\n            //Provided by the terminator. Use this unique ID to check DLR shipping statuses etc.\n            \"message_id\": \"1\",\n             \"error_id\": 0,\n            \"error_msg\": \"\"\n        }\n    ]\n}"
+				},
+				{
+					"id": "e2e8f99d-b51a-453f-ba41-bcca79664eff",
+					"name": "Error Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"connector_id\": \"xxxx\",\r\n    \"src_address\": \"59894\",\r\n    \"dest_address\": \"59894640860\",\r\n    \"short_message\": \"Hello world\",\r\n    \"data_coding\": 0,\r\n    \"registered_delivery\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/submitSms"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "48"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"30-7n9T+mFdkJJzNZu/HC1+FOTiT6I\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 31 Mar 2023 15:54:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"error_id\": 100,\n    \"error_msg\": \"Invalid connector\"\n}"
+				}
+			]
+		},
+		{
+			"name": "QuerySm",
+			"id": "7e694018-6109-448d-a149-28b68690157e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"connector_id\": \"{{connector_id}}\",\r\n    \"message_id\":\"41594691\",\r\n    \"src_address\": \"5984\",\r\n    \"src_addr_npi\":1,\r\n    \"src_addr_ton\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{URL}}/querySm",
+				"description": "Query the status of a message.\n\n**VARIABLES:**\n\n| **Variable** | **Type** | **Description** |\n| --- | --- | --- |\n| connector_id | string | Connector through which the initial message was sent. submitSm **required** |\n| message_id | string | The id message received in the submitSm operation **required** |\n| src_address | string | The source address of the message previously sent from submitsm. **required** |\n| src_addr_npi | int | optional default is 1 |\n| src_addr_ton | int | optional default is 1 |\n\n**LIST OF RESPONSE QUERYSM ERRORS:**\n\n| **error_id** | **Detail** |\n| --- | --- |\n| 1 | Connector SMPP identifier is required. |\n| 2 | The QuerySm option is not available. |\n| 3 | ID message is required  <br>**message_id** |\n| 4 | The source address is incorrect.  <br>**src_address** |\n| 5 | The source NPI is incorrect  <br>**src_addr_npi** |\n| 6 | The source TON is incorrect  <br>**src_addr_ton** |\n| 100 | Invalid connector.  <br>**connector_id** |\n| 101 | Disabled connector |\n| 102 | Connector not found |\n| 103 | The connector could not establish a connection to the SMPP server. |\n| 104 | Internal error. Connector error. |"
+			},
+			"response": [
+				{
+					"id": "e7f6d266-83d4-4feb-8e23-e1d7823f1f71",
+					"name": "Successful Example 1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"connector_id\": \"650b0abc01\",\r\n    \"message_id\":\"41594691\",\r\n    \"src_addr\": \"59894\",\r\n    \"src_npi\":1,\r\n    \"src_ton\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/querySms"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "163"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a3-GUetk43ZPODDbw+e1OEtoVk2hio\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 31 Mar 2023 17:37:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    //Final date UTC format.\n    \"final_date\": \"2023-03-31T17:37:17.400Z\",\n    /*  SCHEDULED > 0\n        ENROUTE > 1\n        DELIVERED > 2\n        EXPIRED > 3\n        DELETED > 4\n        UNDELIVERABLE > 5\n        ACCEPTED > 6\n        UNKNOWN > 7\n        REJECTED > 8\n        SKIPPED > 9\n*/\n    \"message_state\": 2,\n    \"message_state_info\": \"DELIVERED\",\n    \"command_status\": 0,\n    \"message_id\": \"41594691\",\n    \"error_id\": 0,\n    \"error_msg\": \"\"\n}"
+				},
+				{
+					"id": "7061b109-131b-4830-ad2c-556ba9796d95",
+					"name": "Successful Example 2",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"connector_id\": \"650b0abc01\",\r\n    \"message_id\":\"41594691\",\r\n    \"src_addr\": \"59894\",\r\n    \"src_npi\":1,\r\n    \"src_ton\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/querySms"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "194"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c2-JgL5r2zVuu1x5yOxTi5wly5e4IQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 31 Mar 2023 17:31:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"final_date\": \"\",\n    \"message_state\": 0,\n    \"message_id\": \"41594691\",\n    \"message_state_info\": \"SCHEDULED\",\n    \"command_status\": 103,\n    //Provided by the terminator. 0=OK. Any other integer value defines a smpp error. See the error in the error_msg variable\n    \"error_id\": 99,\n    \"error_msg\": \"Command status error (103) - query_sm_request_failed\"\n}"
+				},
+				{
+					"id": "90ae51c8-bdf1-4140-b158-194b7845ec78",
+					"name": "Error Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"connector_id\": \"xxxx\",\r\n    \"src_address\": \"59894\",\r\n    \"dest_address\": \"59894640860\",\r\n    \"short_message\": \"Hello world\",\r\n    \"data_coding\": 0,\r\n    \"registered_delivery\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/submitSms"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "48"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"30-7n9T+mFdkJJzNZu/HC1+FOTiT6I\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 31 Mar 2023 15:54:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"error_id\": 100,\n    \"error_msg\": \"Invalid connector\"\n}"
+				}
+			]
+		},
+		{
+			"name": "ReportDLR",
+			"id": "ad734ae7-a34e-404b-bbf8-e070b03d235c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"connector_id\":\"{{connector_id}}\",\r\n    \"message_id\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{URL}}/reportDLR",
+				"description": "Get information from DLR reports (Delivery Report)\n\nVARIABLES:\n\n| **Variable** | **Type** | **Detail** |\n| --- | --- | --- |\n| connector_id | string | Connector through which the initial message was sent. submitSm **required** |\n| message_id | string | The id message received in the submitSm operation required |"
+			},
+			"response": [
+				{
+					"id": "f938ae3e-c117-431a-8604-a9df76b025cd",
+					"name": "Successful Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"connector_id\":\"650b0abc01\",\r\n    \"message_id\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/reportDLR"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "970"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3ca-01EPm/Gw39G8t3DdKSbSOXfqt0Y\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 31 Mar 2023 17:59:45 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"connector_id\": \"650b0abc01\",\n    \"message_id\": \"1\",\n    \"message_id_hex\": \"1\",\n    \"destination_addr\": \"59894\",\n    \"data_coding\": 0,\n    \"message_state\": 2,\n    \"dlr_done_date\": \"2303281012\",\n    \"dlr_submit_date\": \"2303281012\",\n    \"dlr_final_status\": \"DELIVRD\",\n    \"dlr_final_status_code\": \"000\",\n    \"dlr_status\": \"000\",\n    \"dlr_error\": \"000\",\n    \"text\": \"11111[TRIAL]\",\n    \"delivered\": 1,\n    \"pdu\": {\n        \"command_length\": 172,\n        \"command_id\": 5,\n        \"command_status\": 0,\n        \"sequence_number\": 1,\n        \"command\": \"deliver_sm\",\n        \"service_type\": \"\",\n        \"source_addr_ton\": 1,\n        \"source_addr_npi\": 1,\n        \"source_addr\": \"598640861\",\n        \"dest_addr_ton\": 1,\n        \"dest_addr_npi\": 1,\n        \"destination_addr\": \"59894\",\n        \"esm_class\": 4,\n        \"protocol_id\": 0,\n        \"priority_flag\": 0,\n        \"schedule_delivery_time\": \"\",\n        \"validity_period\": \"\",\n        \"registered_delivery\": 0,\n        \"replace_if_present_flag\": 0,\n        \"data_coding\": 0,\n        \"sm_default_msg_id\": 0,\n        \"short_message\": {\n            \"message\": \"id:1 sub:000 dlvrd:000 submit date:2303281012 done date:2303281012 stat:DELIVRD err:000 text:11111[TRIAL]\"\n        },\n        \"receipted_message_id\": \"1\",\n        \"message_state\": 2,\n        \"network_error_code\": [\n            3,\n            0,\n            0\n        ]\n    }\n}"
+				},
+				{
+					"id": "f7406afa-425c-444b-aa1e-f4dd515720a4",
+					"name": "Error Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"connector_id\":\"100\",\r\n    \"message_id\":\"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/reportDLR"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "48"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"30-7n9T+mFdkJJzNZu/HC1+FOTiT6I\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 31 Mar 2023 18:00:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"error_id\": 100,\n    \"error_msg\": \"Invalid connector\"\n}"
+				}
+			]
+		},
+		{
+			"name": "CancelSm",
+			"id": "c9a0da6a-3ce8-44f7-b258-507ddaccdd10",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"connector_id\": \"{{connector_id}}\",\r\n    \"message_id\":\"41594691\",\r\n    \"dest_address\":\"5989464086\",\r\n    \"src_addr\": \"59894\",\r\n    \"src_npi\":1,\r\n    \"src_ton\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{URL}}/cancelSm",
+				"description": "Cancel sent messages. Generally used when messages are sent deferred using or setting schedule_delivery_time."
+			},
+			"response": [
+				{
+					"id": "a8f680d7-fcbf-4a45-bac5-b7441fc699f8",
+					"name": "CancelSm",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"connector_id\": \"{{connector_id}}\",\r\n    \"message_id\":\"41594691\",\r\n    \"dest_address\":\"5989464086\",\r\n    \"src_addr\": \"59894\",\r\n    \"src_npi\":1,\r\n    \"src_ton\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/cancelSm"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "48"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"30-DDlVP2XvdlAze8cAewqW11wUX24\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 01 Apr 2023 13:02:06 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"error_id\": 0,\n    \"error_msg\": \"\",\n    \"command_status\": 0\n}"
+				},
+				{
+					"id": "5737c627-b85b-46e0-a3a5-2838494ec296",
+					"name": "CancelSm",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"connector_id\": \"650b0abc01\",\r\n    \"message_id\":\"41594691\",\r\n    \"dest_address\":\"5989464086\",\r\n    \"src_addr\": \"59894\",\r\n    \"src_npi\":1,\r\n    \"src_ton\":1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/cancelSms"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "94"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5e-kWvrymZBNIkTGBHAkmmsjqrLnK4\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 31 Mar 2023 17:55:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"error_id\": 99,\n    \"error_msg\": \"Command status error (17) - Cancel_SM_Failed\",\n    \"command_status\": 17\n}"
+				}
+			]
+		},
+		{
+			"name": "TestDataCoding",
+			"id": "68a38feb-bb1a-495d-aab4-03c22f4019e2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"message\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{URL}}/testDataCoding",
+				"description": "Test data coding returns from a message text which is the best data coding starting from default GSM7, 7bit, 8 bit up to unicode."
+			},
+			"response": [
+				{
+					"id": "4e70de39-8d72-4e10-85ca-310f845aae10",
+					"name": "TestDataCoding",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\":\"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/testDataCoding"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "83"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"53-o9qkEe5pZ8UuOQDaYI9HBJL/FE8\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 01 Apr 2023 13:05:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    //The min or best datacoding. return -1 if not match datacoding.\n    \"data_coding\": 0,\n    //The maximum length of the message. If it exceeds the number of characters, it is sent in concatenated mode.\n    \"data_coding_size\": 160,\n     //In case of concatenation, it is the number of characters used to separate the concatenation.\n    \"udh_sars_split_length\": 153,\n    //It is the number of messages that are required to be sent. If it is more than 1, concatenation is required.\n    \"split_size\": 3\n\n}"
+				},
+				{
+					"id": "0ba37ca3-1911-473e-83d4-48b2cea115e4",
+					"name": "TestDataCoding",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"message\":\"ЄáéóúpLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/testDataCoding"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "85"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"55-V4L6PFhmAS/bTRiY3VxMhyTM4CY\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 01 Apr 2023 23:17:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"data_coding\": -1,\n    \"data_coding_length\": -1,\n    \"udh_sars_split_length\": -1,\n    \"split_size\": -1\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "02f13e5a1db948e1a83461d7c3181c63d9bf4116d5bc599dbd218df8c8070ab7"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "fc3e3ac0-f9d6-40de-b5b7-52379c8d7414",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "55952766-d7ec-45ed-9db5-5002c2012da7",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "97622eeb-bc6a-46a7-a728-b234867059db",
+			"key": "URL",
+			"value": "http://localhost:8083"
+		},
+		{
+			"id": "e84c3d87-abba-4447-8e99-55bf44ae0929",
+			"key": "connector_id",
+			"value": "650b0abc01",
+			"type": "string"
+		}
+	]
+}
