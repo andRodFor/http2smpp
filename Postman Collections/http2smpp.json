@@ -136,60 +136,6 @@
 					"body": "{\n    \"error_id\": 100,\n    \"error_msg\": \"Invalid connector\"\n}"
 				},
 				{
-					"id": "17c4db51-da1d-4033-9d6a-f590451073b2",
-					"name": "SubmitSm",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"connector_id\": \"{{connector_id}}\",\r\n    \"src_address\": \"59894\",\r\n    \"dest_address\": \"59800001,59800002\",\r\n    \"short_message\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure\",\r\n    \"data_coding\": 0,\r\n    \"registered_delivery\": 1\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{URL}}/submitSm"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "804"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"324-FmqO+81/Tgc500ZR5hRmRsTUhxk\""
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 08 Apr 2023 15:54:26 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"responseTime": null,
-					"body": "[\n    {\n        \"error_id\": 0,\n        \"error_msg\": \"\",\n        \"connector_id\": \"650b0abc01\",\n        \"src_address\": \"598940001112\",\n        \"message_group_id\": \"1e4c3708a6\",\n        \"submit_mode\": \"udh\",\n        \"data_coding\": 0,\n        \"split_size\": 2,\n        \"message_size\": 247,\n        \"qty_address\": 2,\n        \"qty_submit_messages\": 2,\n        \"qty_computable_messages\": 4,\n        \"qty_computable_errors\": 0,\n        \"address\": [\n            \"59800001\",\n            \"59800002\"\n        ],\n        \"result\": [\n            {\n                \"message_part\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis\",\n                \"error_id\": 0,\n                \"error_msg\": \"\",\n                \"unsuccess\": [],\n                \"command_status\": 0,\n                \"message_id\": \"1758443684792318\"\n            },\n            {\n                \"message_part\": \" nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure\",\n                \"error_id\": 0,\n                \"error_msg\": \"\",\n                \"unsuccess\": [],\n                \"command_status\": 0,\n                \"message_id\": \"7255923711553392\"\n            }\n        ]\n    }\n]"
-				},
-				{
 					"id": "d6f5ac46-fdfe-412d-bd04-8a68515c09ff",
 					"name": "SubmitSm",
 					"originalRequest": {
@@ -858,12 +804,12 @@
 	],
 	"variable": [
 		{
-			"id": "c556e0db-3e48-4ac0-a02e-1037ef9c4400",
+			"id": "636ce06d-27a4-4750-8798-3a8e35355b2c",
 			"key": "URL",
 			"value": "http://localhost:8083"
 		},
 		{
-			"id": "1e156d84-b8b3-4905-8dc2-27f8af6d894d",
+			"id": "c0092032-3e14-435d-b6f3-6c8fe0259b3b",
 			"key": "connector_id",
 			"value": "650b0abc01",
 			"type": "string"
