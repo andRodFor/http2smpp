@@ -16,7 +16,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"connector_id\": \"{{connector_id}}\",\r\n    \"src_address\": \"59894\",\r\n    \"dest_address\": \"59894640860\",\r\n    \"short_message\": \"Hello world\",\r\n    \"data_coding\": 0,\r\n    \"registered_delivery\": 1\r\n}",
+					"raw": "{\r\n    \"connector_id\": \"{{connector_id}}\",\r\n    \"src_address\": \"59894\",\r\n    \"dest_address\": \"59800001,59800002\",\r\n    \"short_message\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure\",\r\n    \"data_coding\": 0,\r\n    \"registered_delivery\": 1\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -750,12 +750,12 @@
 	],
 	"variable": [
 		{
-			"id": "ceadb758-1c74-4008-96f1-139cbe73e1b3",
+			"id": "fe05e574-7b1d-42d5-ad15-21decfc9b3d6",
 			"key": "URL",
 			"value": "http://localhost:8083"
 		},
 		{
-			"id": "1a3e772d-1f79-401c-8acd-4fa59e330ac1",
+			"id": "ddb34f96-b74b-426e-ba24-fbe3a339f73d",
 			"key": "connector_id",
 			"value": "650b0abc01",
 			"type": "string"
