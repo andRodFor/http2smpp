@@ -188,6 +188,60 @@
 					"cookie": [],
 					"responseTime": null,
 					"body": "[\n    {\n        \"error_id\": 0,\n        \"error_msg\": \"\",\n        \"connector_id\": \"650b0abc01\",\n        \"src_address\": \"598940001112\",\n        \"message_group_id\": \"1e4c3708a6\",\n        \"submit_mode\": \"udh\",\n        \"data_coding\": 0,\n        \"split_size\": 2,\n        \"message_size\": 247,\n        \"qty_address\": 2,\n        \"qty_submit_messages\": 2,\n        \"qty_computable_messages\": 4,\n        \"qty_computable_errors\": 0,\n        \"address\": [\n            \"59800001\",\n            \"59800002\"\n        ],\n        \"result\": [\n            {\n                \"message_part\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis\",\n                \"error_id\": 0,\n                \"error_msg\": \"\",\n                \"unsuccess\": [],\n                \"command_status\": 0,\n                \"message_id\": \"1758443684792318\"\n            },\n            {\n                \"message_part\": \" nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure\",\n                \"error_id\": 0,\n                \"error_msg\": \"\",\n                \"unsuccess\": [],\n                \"command_status\": 0,\n                \"message_id\": \"7255923711553392\"\n            }\n        ]\n    }\n]"
+				},
+				{
+					"id": "d6f5ac46-fdfe-412d-bd04-8a68515c09ff",
+					"name": "SubmitSm",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"connector_id\": \"{{connector_id}}\",\r\n    \"src_address\": \"59894\",\r\n    \"dest_address\": \"59800001,59800002\",\r\n    \"short_message\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure\",\r\n    \"data_coding\": 0,\r\n    \"registered_delivery\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/submitSm"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "952"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3b8-gCEQLNEEDt/z1u7n71TKvsgvX5c\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 08 Apr 2023 16:19:51 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"qty_addresses\": 2,\n    \"qty_submit_messages\": 2,\n    \"qty_computable_messages\": 4,\n    \"qty_computable_errors\": 0,\n    \"connectors_result\": [\n        {\n            \"error_id\": 0,\n            \"error_msg\": \"\",\n            \"connector_id\": \"650b0abc01\",\n            \"route_type\": \"Short_Code\",\n            \"src_address\": \"598940001112\",\n            \"message_group_id\": \"61b4d8f763\",\n            \"submit_mode\": \"udh\",\n            \"data_coding\": 0,\n            \"split_size\": 2,\n            \"message_size\": 247,\n            \"qty_addresses\": 2,\n            \"qty_submit_messages\": 2,\n            \"qty_computable_messages\": 4,\n            \"qty_computable_errors\": 0,\n            \"addresses\": [\n                \"59800001\",\n                \"59800002\"\n            ],\n            \"result\": [\n                {\n                    \"message_part\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis\",\n                    \"error_id\": 0,\n                    \"error_msg\": \"\",\n                    \"unsuccess\": [],\n                    \"command_status\": 0,\n                    \"message_id\": \"4293994353939469\"\n                },\n                {\n                    \"message_part\": \" nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure\",\n                    \"error_id\": 0,\n                    \"error_msg\": \"\",\n                    \"unsuccess\": [],\n                    \"command_status\": 0,\n                    \"message_id\": \"8385314347176461\"\n                }\n            ]\n        }\n    ]\n}"
 				}
 			]
 		},
@@ -804,12 +858,12 @@
 	],
 	"variable": [
 		{
-			"id": "bb046515-56a6-43bc-80c1-c1a651f9612f",
+			"id": "c556e0db-3e48-4ac0-a02e-1037ef9c4400",
 			"key": "URL",
 			"value": "http://localhost:8083"
 		},
 		{
-			"id": "b36ac14b-5482-4f14-97c6-2be471329974",
+			"id": "1e156d84-b8b3-4905-8dc2-27f8af6d894d",
 			"key": "connector_id",
 			"value": "650b0abc01",
 			"type": "string"
