@@ -188,6 +188,60 @@
 					"cookie": [],
 					"responseTime": null,
 					"body": "{\n    \"qty_addresses\": 2,\n    \"qty_submit_messages\": 2,\n    \"qty_computable_messages\": 4,\n    \"qty_computable_errors\": 0,\n    \"connectors_result\": [\n        {\n            \"error_id\": 0,\n            \"error_msg\": \"\",\n            \"connector_id\": \"650b0abc01\",\n            \"route_type\": \"Short_Code\",\n            \"src_address\": \"598940001112\",\n            \"message_group_id\": \"61b4d8f763\",\n            \"submit_mode\": \"udh\",\n            \"data_coding\": 0,\n            \"split_size\": 2,\n            \"message_size\": 247,\n            \"qty_addresses\": 2,\n            \"qty_submit_messages\": 2,\n            \"qty_computable_messages\": 4,\n            \"qty_computable_errors\": 0,\n            \"addresses\": [\n                \"59800001\",\n                \"59800002\"\n            ],\n            \"result\": [\n                {\n                    \"message_part\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis\",\n                    \"error_id\": 0,\n                    \"error_msg\": \"\",\n                    \"unsuccess\": [],\n                    \"command_status\": 0,\n                    \"message_id\": \"4293994353939469\"\n                },\n                {\n                    \"message_part\": \" nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure\",\n                    \"error_id\": 0,\n                    \"error_msg\": \"\",\n                    \"unsuccess\": [],\n                    \"command_status\": 0,\n                    \"message_id\": \"8385314347176461\"\n                }\n            ]\n        }\n    ]\n}"
+				},
+				{
+					"id": "bc186f9d-563a-4e04-aa81-f8098fed9253",
+					"name": "SubmitSm",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"connector_id\": \"short_code\",\r\n    \"src_address\": \"59894\",\r\n    \"dest_address\": \"59800001,59800002,598970000\",\r\n    \"short_message\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure\",\r\n    \"data_coding\": 0,\r\n    \"registered_delivery\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/submitSm"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1392"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"570-FKSwvg+8zHQvlxoszXKDQ49pA6o\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Apr 2023 00:22:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"error_id\": 0,\n    \"error_msg\": \"\",\n    \"message_group_id\": \"10656a792f\",\n    \"qty_addresses\": 3,\n    \"qty_submit_messages\": 3,\n    \"qty_computable_messages\": 5,\n    \"qty_computable_errors\": 0,\n    \"connectors_result\": [\n        {\n            \"error_id\": 0,\n            \"error_msg\": \"\",\n            \"connector_id\": \"650b0abc01\",\n            \"route_type\": \"Short_Code\",\n            \"src_address\": \"598940001112\",\n            \"submit_mode\": \"udh\",\n            \"data_coding\": 0,\n            \"split_size\": 2,\n            \"message_size\": 247,\n            \"qty_addresses\": 2,\n            \"qty_submit_messages\": 2,\n            \"qty_computable_messages\": 4,\n            \"qty_computable_errors\": 0,\n            \"addresses\": [\n                \"59800001\",\n                \"59800002\"\n            ],\n            \"result\": [\n                {\n                    \"message_part\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis\",\n                    \"error_id\": 0,\n                    \"error_msg\": \"\",\n                    \"unsuccess\": [],\n                    \"command_status\": 0,\n                    \"message_id\": \"2672763166239116\"\n                },\n                {\n                    \"message_part\": \" nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure\",\n                    \"error_id\": 0,\n                    \"error_msg\": \"\",\n                    \"unsuccess\": [],\n                    \"command_status\": 0,\n                    \"message_id\": \"4358713271239717\"\n                }\n            ]\n        },\n        {\n            \"error_id\": 0,\n            \"error_msg\": \"\",\n            \"connector_id\": \"0f4c64880a\",\n            \"route_type\": \"Short_Code\",\n            \"src_address\": \"59894\",\n            \"submit_mode\": \"payload\",\n            \"data_coding\": 0,\n            \"split_size\": 2,\n            \"message_size\": 247,\n            \"qty_addresses\": 1,\n            \"qty_submit_messages\": 1,\n            \"qty_computable_messages\": 1,\n            \"qty_computable_errors\": 0,\n            \"addresses\": [\n                \"598970000\"\n            ],\n            \"result\": [\n                {\n                    \"message_part\": \"\",\n                    \"error_id\": 0,\n                    \"error_msg\": \"\",\n                    \"unsuccess\": [],\n                    \"command_status\": 0,\n                    \"message_id\": \"2\"\n                }\n            ]\n        }\n    ]\n}"
 				}
 			]
 		},
@@ -804,12 +858,12 @@
 	],
 	"variable": [
 		{
-			"id": "ca3427e4-7b29-4cff-afee-dbb4b160398f",
+			"id": "91b8a957-9253-498a-bda9-9bfab1bb4c74",
 			"key": "URL",
 			"value": "http://localhost:8083"
 		},
 		{
-			"id": "c60ce1be-65c5-48e2-863c-813c4f28eb52",
+			"id": "f53ea82d-eede-4c49-becc-7367f53a02ac",
 			"key": "connector_id",
 			"value": "650b0abc01",
 			"type": "string"
