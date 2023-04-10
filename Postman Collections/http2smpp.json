@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "9a475eea-3142-4b73-9fc9-ba83f3c66717",
-		"name": "HTTP2SMPP",
+		"name": "BOX2SMS",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
@@ -27,60 +27,6 @@
 				"description": "This operation allows you to send **single** or **multiple** sms.\n\n**VARIABLES:**\n\n| **Variables** | **Type** | **Detail** |\n| --- | --- | --- |\n| connector_id | string | Identifies the SMPP provider connector to be used for sending SMS. **(required)** |\n| dest_address | string | Address(es) of destinations more than one separated by comma \",\" **(required)** |\n| short_message | string | The sms message. **(required)** |\n| data_coding | int | Data coding or charset of the message. **(required)**  <br>0 = default SMPP. GSM7.  <br>3=Latin 1 (ISO-8859-1)  <br>4=Octet unspecified (8-bit binary) ISO-8859-9  <br>6=Cyrillic (ISO-8859-5)  <br>7=Latin/Hebrew (ISO-8859-8)  <br>8=ucs2 (UTF-16BE)  <br>16=Default Flash.  <br>24=Unicode Flash. |\n| src_address | string | Origin SMS address. |\n| registered_delivery | int | 0 = No SMSC Delivery Receipt requested **(default).**  <br>1 = MSC Delivery Receipt requested where final delivery outcome is delivery success or failure.  <br>2 = SMSC Delivery Receipt requested where the final delivery outcome is delivery failure.  <br>3 = MSC Delivery Receipt requested where final delivery outcome is delivery success |\n| schedule_delivery_time | string | The message must be sent from the moment it is received plus the configured relative time.  <br>relative time. check with your SMS provider.  <br>default \"\" empty.  <br>format: yyMMddhhmmss000R  <br>example:000003000000000R\" (3 days relative local SMSC time) |\n| validity_period | string | The relative maximum time that is accepted for sending or delivering the message, before it expires. In general it is from 1hs to 72 hs.  <br>Check with your SMS provider.  <br>default \"\" empty.  <br>format: yyMMddhhmmss000R  <br>example:000003000000000R\" (3 days relative local SMSC time) |\n| src_addr_ton | int | Source Address TON  <br>default 1.  <br>Check with your SMS provider. |\n| src_addr_npi | int | Source Address NPI  <br>default 1  <br>Check with your SMS provider. |\n| dest_addr_ton | int | Destination Address TON  <br>default 1  <br>Check with your SMS provider. |\n| dest_addr_npi | int | Destination Address NPI  <br>default 1  <br>Check with your SMS provider. |\n\n**LIST OF RESPONSE SUBMITSM ERRORS:**\n\n| **error_id** | **Detail** |\n| --- | --- |\n| 1 | Connector SMPP identifier is required.  <br>**connector_id** |\n| 2 | The destination address is required.  <br>**dest_address** |\n| 3 | The data coding is required or incorrect  <br>**data_coding** |\n| 4 | The source TON is incorrect  <br>**src_addr_ton** |\n| 5 | The source NPI is incorrect  <br>**src_addr_npi** |\n| 6 | The destination TON is incorrect  <br>**dest_addr_ton** |\n| 7 | The destination NPI is incorrect.  <br>**dest_addr_npi** |\n| 8 | The schedule delivery time is incorrect.  <br>**schedule_delivery_time** |\n| 9 | The valid period is incorrect.  <br>**validity_period** |\n| 10 | The registered delivery is incorrect.  <br>**registered_delivery** |\n| 11 | The short message is required.  <br>**short_message** |\n| 12 | SMPP provider does not support multism send. |\n| 13 | The message concatenation maximum is exceeded. |\n| 14 | The maximum number of addresses is exceeded. |\n| 15 | Not allowed area code |\n| 100 | Invalid connector.  <br>connector_id |\n| 101 | Disabled connector |\n| 102 | Connector not found. |\n| 103 | The connector could not establish a connection to the SMPP server. |\n| 104 | Internal error. Connector error. |\n| 500 | Internal server error. |"
 			},
 			"response": [
-				{
-					"id": "e2e8f99d-b51a-453f-ba41-bcca79664eff",
-					"name": "Error Example",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"connector_id\": \"xxxx\",\r\n    \"src_address\": \"59894\",\r\n    \"dest_address\": \"59894640860\",\r\n    \"short_message\": \"Hello world\",\r\n    \"data_coding\": 0,\r\n    \"registered_delivery\": 1\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "{{URL}}/submitSms"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "48"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"30-7n9T+mFdkJJzNZu/HC1+FOTiT6I\""
-						},
-						{
-							"key": "Date",
-							"value": "Fri, 31 Mar 2023 15:54:17 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"responseTime": null,
-					"body": "{\n    \"error_id\": 100,\n    \"error_msg\": \"Invalid connector\"\n}"
-				},
 				{
 					"id": "bc186f9d-563a-4e04-aa81-f8098fed9253",
 					"name": "Successful Example",
@@ -134,6 +80,60 @@
 					"cookie": [],
 					"responseTime": null,
 					"body": "{\n    \"error_id\": 0,\n    \"error_msg\": \"\",\n    \"message_group_id\": \"10656a792f\",\n    \"qty_addresses\": 3,\n    \"qty_submit_messages\": 3,\n    \"qty_computable_messages\": 5,\n    \"qty_computable_errors\": 0,\n    \"connectors_result\": [\n        {\n            \"error_id\": 0,\n            \"error_msg\": \"\",\n            \"connector_id\": \"650b0abc01\",\n            \"route_type\": \"Short_Code\",\n            \"src_address\": \"598940001112\",\n            \"submit_mode\": \"udh\",\n            \"data_coding\": 0,\n            \"split_size\": 2,\n            \"message_size\": 247,\n            \"qty_addresses\": 2,\n            \"qty_submit_messages\": 2,\n            \"qty_computable_messages\": 4,\n            \"qty_computable_errors\": 0,\n            \"addresses\": [\n                \"59800001\",\n                \"59800002\"\n            ],\n            \"result\": [\n                {\n                    \"message_part\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis\",\n                    \"error_id\": 0,\n                    \"error_msg\": \"\",\n                    \"unsuccess\": [],\n                    \"command_status\": 0,\n                    \"message_id\": \"2672763166239116\"\n                },\n                {\n                    \"message_part\": \" nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure\",\n                    \"error_id\": 0,\n                    \"error_msg\": \"\",\n                    \"unsuccess\": [],\n                    \"command_status\": 0,\n                    \"message_id\": \"4358713271239717\"\n                }\n            ]\n        },\n        {\n            \"error_id\": 0,\n            \"error_msg\": \"\",\n            \"connector_id\": \"0f4c64880a\",\n            \"route_type\": \"Short_Code\",\n            \"src_address\": \"59894\",\n            \"submit_mode\": \"payload\",\n            \"data_coding\": 0,\n            \"split_size\": 2,\n            \"message_size\": 247,\n            \"qty_addresses\": 1,\n            \"qty_submit_messages\": 1,\n            \"qty_computable_messages\": 1,\n            \"qty_computable_errors\": 0,\n            \"addresses\": [\n                \"598970000\"\n            ],\n            \"result\": [\n                {\n                    \"message_part\": \"\",\n                    \"error_id\": 0,\n                    \"error_msg\": \"\",\n                    \"unsuccess\": [],\n                    \"command_status\": 0,\n                    \"message_id\": \"2\"\n                }\n            ]\n        }\n    ]\n}"
+				},
+				{
+					"id": "e2e8f99d-b51a-453f-ba41-bcca79664eff",
+					"name": "Error Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"connector_id\": \"xxxx\",\r\n    \"src_address\": \"59894\",\r\n    \"dest_address\": \"59894640860\",\r\n    \"short_message\": \"Hello world\",\r\n    \"data_coding\": 0,\r\n    \"registered_delivery\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/submitSms"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "48"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"30-7n9T+mFdkJJzNZu/HC1+FOTiT6I\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 31 Mar 2023 15:54:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"error_id\": 100,\n    \"error_msg\": \"Invalid connector\"\n}"
 				}
 			]
 		},
@@ -750,12 +750,12 @@
 	],
 	"variable": [
 		{
-			"id": "495687ad-da9d-490e-a25f-9552e3b86a1b",
+			"id": "7da98bd0-da16-4d80-a5f8-0e3b62a38075",
 			"key": "URL",
 			"value": "http://localhost:8083"
 		},
 		{
-			"id": "e405c566-7902-4ac9-b8e5-4f2bf4dfc9dd",
+			"id": "d5805277-197f-41cb-8a27-9c3a92009992",
 			"key": "connector_id",
 			"value": "650b0abc01",
 			"type": "string"
