@@ -28,60 +28,6 @@
 			},
 			"response": [
 				{
-					"id": "44c0a076-819a-40b7-8fe7-9ceea63e9853",
-					"name": "Successful Example",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"connector_id\": \"650b0abc01\",\r\n    \"src_addr\": \"59894\",\r\n    \"dest_address\": \"59894640860\",\r\n    \"short_message\": \"Hello world\",\r\n    \"data_coding\":0,\r\n    \"registered_delivery\":1\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "http://localhost:8083/submitSms"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "342"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"156-o8KU3c6ZdY78veBYJFkcF/at23k\""
-						},
-						{
-							"key": "Date",
-							"value": "Fri, 31 Mar 2023 13:45:38 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"responseTime": null,
-					"body": "{\n    \"error_id\":0,\n    \"error_msg\":\"\",\n    //Message groupID Includes all messages id.\n    \"message_group_id\": \"3416a51eb9\",\n    //Values: short_message, payload and udh, sars for concatenations.\n    \"submit_mode\": \"short_message\", \n    //The data_coding\n    \"data_coding\": 0,\n    //If it is greater than 1, the message has been sent in multiple parts or concatenated.\n    \"split_size\": 1,\n    //The length of message.\n    \"message_size\": 11,\n    //Quatity of address destinataries.\n    \"qty_address\": 1,\n    //The number of submitsm or submitmulti sent to the smpp server terminator.\n    \"qty_submit_messages\": 1,\n    //It refers to the number of computable messages, that is, charged by the provider. In cases of long or concatenated messages, this value is increased regardless of the submit.\n    \"qty_computable_messages\": 1,\n    //Error/s computables.\n    \"qty_computable_errors\": 0,\n    \"src_address\":\"59894\",\n    //Array string of all addresses.\n    \"address\": [\n        \"59894640860\"\n    ],\n    //Array objet of result sent/s\n    \"result\": [\n        {\n            //In case of concatenation of the message, the part of the message sent is defined.\n            \"message_part\": \"\",\n            //In case of multiple sendings if the terminator rejects some addresses are defined in a string array.\n            \"unsuccess\": [],\n            //Provided by the terminator. 0=OK. Any other integer value defines a smpp error. See the error in the error_msg variable\n            \"command_status\": 0,\n            //Provided by the terminator. Use this unique ID to check DLR shipping statuses etc.\n            \"message_id\": \"1\",\n             \"error_id\": 0,\n            \"error_msg\": \"\"\n        }\n    ]\n}"
-				},
-				{
 					"id": "e2e8f99d-b51a-453f-ba41-bcca79664eff",
 					"name": "Error Example",
 					"originalRequest": {
@@ -804,12 +750,12 @@
 	],
 	"variable": [
 		{
-			"id": "a7c61c0f-568f-48e2-9599-60dd5c763e12",
+			"id": "63448ba4-e8cf-4fcc-bd82-6c1ecba41004",
 			"key": "URL",
 			"value": "http://localhost:8083"
 		},
 		{
-			"id": "a2db8293-ec21-4c3d-b010-a8bf61b7d9e7",
+			"id": "8520558d-54ab-496c-9f7a-af560e10ef41",
 			"key": "connector_id",
 			"value": "650b0abc01",
 			"type": "string"
