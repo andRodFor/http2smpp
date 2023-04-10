@@ -750,12 +750,12 @@
 	],
 	"variable": [
 		{
-			"id": "234daaac-d489-4922-aa81-8582f60454dd",
+			"id": "bfbbf57a-93ff-463b-b9ef-465d669efcd8",
 			"key": "URL",
 			"value": "http://localhost:8083"
 		},
 		{
-			"id": "4c69d3a4-0575-45d2-9c02-10cdc4e3fe48",
+			"id": "bdc61a73-9525-430d-b119-dd21c93f33f3",
 			"key": "connector_id",
 			"value": "650b0abc01",
 			"type": "string"
