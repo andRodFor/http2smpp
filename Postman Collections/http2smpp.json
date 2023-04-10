@@ -466,7 +466,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"connector_id\": \"{{connector_id}}\",\r\n    \"message_id\":\"41594691\",\r\n    \"dest_address\":\"5989464086\",\r\n    \"src_addr\": \"59894\",\r\n    \"src_npi\":1,\r\n    \"src_ton\":1\r\n}",
+					"raw": "{\r\n    \"connector_id\": \"{{connector_id}}\",\r\n    \"message_id\":\"41594691\",\r\n    \"dest_address\":\"5989464086\",\r\n    \"source_address\": \"59894\",\r\n    \"source_addr_npi\":1,\r\n    \"source_addr_ton\":1\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -750,12 +750,12 @@
 	],
 	"variable": [
 		{
-			"id": "78b90588-7353-4805-9eb2-be0966ea2cf1",
+			"id": "d14fbc48-e57f-4d95-a69e-b51f53912a8d",
 			"key": "URL",
 			"value": "http://localhost:8083"
 		},
 		{
-			"id": "625bf21c-d624-4121-8bf3-37534c738658",
+			"id": "7004d771-7af3-4632-9e47-01d29233ea81",
 			"key": "connector_id",
 			"value": "650b0abc01",
 			"type": "string"
