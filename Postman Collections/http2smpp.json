@@ -134,6 +134,60 @@
 					"cookie": [],
 					"responseTime": null,
 					"body": "{\n    \"error_id\": 100,\n    \"error_msg\": \"Invalid connector\"\n}"
+				},
+				{
+					"id": "1b95478b-151a-4267-8170-49b9d2e4147d",
+					"name": "SubmitSm",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"connector_id\": \"{{connector_id}}\",\r\n    \"source_address\": \"59894\",\r\n    \"dest_address\": \"59800001,59800002\",\r\n    \"short_message\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure\",\r\n    \"data_coding\": 0,\r\n    \"registered_delivery\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{URL}}/submitSm"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "981"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3d5-sXCJKP3+VnHumLzprWJVSmaCtyo\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 15 Apr 2023 01:58:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"responseTime": null,
+					"body": "{\n    \"error_id\": 0,\n    \"error_msg\": \"\",\n    \"message_group_id\": \"70195a0940\",\n    \"qty_addresses\": 2,\n    \"qty_submit_messages\": 2,\n    \"qty_computable_messages\": 4,\n    \"qty_computable_errors\": 0,\n    \"connectors_result\": [\n        {\n            \"error_id\": 0,\n            \"error_msg\": \"\",\n            \"connector_id\": \"650b0abc01\",\n            \"route_type\": \"\",\n            \"source_address\": \"598940001112\",\n            \"submit_mode\": \"udh\",\n            \"data_coding\": 0,\n            \"split_size\": 2,\n            \"message_size\": 247,\n            \"qty_addresses\": 2,\n            \"qty_submit_messages\": 2,\n            \"qty_computable_messages\": 4,\n            \"qty_computable_errors\": 0,\n            \"addresses\": [\n                \"59800001\",\n                \"59800002\"\n            ],\n            \"result\": [\n                {\n                    \"message_part\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis\",\n                    \"error_id\": 0,\n                    \"error_msg\": \"\",\n                    \"unsuccess_sme\": [],\n                    \"command_status\": 0,\n                    \"message_id\": \"8419227286113846\"\n                },\n                {\n                    \"message_part\": \" nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure\",\n                    \"error_id\": 0,\n                    \"error_msg\": \"\",\n                    \"unsuccess_sme\": [],\n                    \"command_status\": 0,\n                    \"message_id\": \"7268443696319259\"\n                }\n            ]\n        }\n    ]\n}"
 				}
 			]
 		},
@@ -750,12 +804,12 @@
 	],
 	"variable": [
 		{
-			"id": "37350d02-4512-4e2d-87ef-7ba3ff15bf83",
+			"id": "1b499e89-b204-4d86-a78d-5bfdf4dd1146",
 			"key": "URL",
 			"value": "http://localhost:8083"
 		},
 		{
-			"id": "ec9fd1e8-cb59-470c-b8c0-245f8cc26aa3",
+			"id": "4ed6faad-dbcf-48d0-b528-f177c3dafd09",
 			"key": "connector_id",
 			"value": "650b0abc01",
 			"type": "string"
