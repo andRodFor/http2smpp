@@ -7,7 +7,20 @@
 	"item": [
 		{
 			"name": "Webhook",
-			"item": [],
+			"item": [
+				{
+					"name": "New Request",
+					"id": "b40f9fa1-1410-4559-988a-96bd51403814",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			],
 			"id": "2e65892d-1bc4-437a-a2ae-c426bc8ba309"
 		},
 		{
@@ -809,12 +822,12 @@
 	],
 	"variable": [
 		{
-			"id": "8613af63-e687-49db-817e-2f19622417b9",
+			"id": "1f72aac9-241a-42ee-9c74-34942aa7f1f3",
 			"key": "URL",
 			"value": "http://localhost:8083"
 		},
 		{
-			"id": "e7f444a4-bbd8-42a3-b441-6d43c4a4d834",
+			"id": "5fc29822-9ceb-45a9-b5eb-9ef784019bd1",
 			"key": "connector_id",
 			"value": "650b0abc01",
 			"type": "string"
