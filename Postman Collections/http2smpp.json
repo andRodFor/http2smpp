@@ -29,60 +29,6 @@
 			},
 			"response": [
 				{
-					"id": "bc186f9d-563a-4e04-aa81-f8098fed9253",
-					"name": "Successful Example",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"connector_id\": \"short_code\",\r\n    \"src_address\": \"59894\",\r\n    \"dest_address\": \"59800001,59800002,598970000\",\r\n    \"short_message\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure\",\r\n    \"data_coding\": 0,\r\n    \"registered_delivery\": 1\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": "http://localhost:8083/submitSm"
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "X-Powered-By",
-							"value": "Express"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=utf-8"
-						},
-						{
-							"key": "Content-Length",
-							"value": "1392"
-						},
-						{
-							"key": "ETag",
-							"value": "W/\"570-FKSwvg+8zHQvlxoszXKDQ49pA6o\""
-						},
-						{
-							"key": "Date",
-							"value": "Mon, 10 Apr 2023 00:22:26 GMT"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Keep-Alive",
-							"value": "timeout=5"
-						}
-					],
-					"cookie": [],
-					"responseTime": null,
-					"body": "{\n    \"error_id\": 0,\n    \"error_msg\": \"\",\n    \"message_group_id\": \"d4263218e1\",\n    \"qty_addresses\": 2,\n    \"qty_submit_messages\": 2,\n    \"qty_computable_messages\": 4,\n    \"qty_computable_errors\": 0,\n    \"connectors_result\": [\n        {\n            \"error_id\": 0,\n            \"error_msg\": \"\",\n            \"connector_id\": \"650b0abc01\",\n            \"route_type\": \"Short_Code\",\n            \"source_address\": \"598940001112\",\n            \"submit_mode\": \"udh\",\n            \"data_coding\": 0,\n            \"split_size\": 2,\n            \"message_size\": 247,\n            \"qty_addresses\": 2,\n            \"qty_submit_messages\": 2,\n            \"qty_computable_messages\": 4,\n            \"qty_computable_errors\": 0,\n            \"addresses\": [\n                \"59800001\",\n                \"59800002\"\n            ],\n            \"result\": [\n                {\n                    \"message_part\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis\",\n                    \"error_id\": 0,\n                    \"error_msg\": \"\",\n                    \"responsePDU\": {\n                        \"command_length\": 34,\n                        \"command_id\": 2147483681,\n                        \"command_status\": 0,\n                        \"sequence_number\": 2,\n                        \"command\": \"submit_multi_resp\",\n                        \"message_id\": \"6823864864987797\",\n                        \"unsuccess_sme\": []\n                    },\n                    \"unsuccess_sme\": [],\n                    \"command_status\": 0,\n                    \"message_id\": \"6823864864987797\"\n                },\n                {\n                    \"message_part\": \" nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure\",\n                    \"error_id\": 0,\n                    \"error_msg\": \"\",\n                    \"responsePDU\": {\n                        \"command_length\": 34,\n                        \"command_id\": 2147483681,\n                        \"command_status\": 0,\n                        \"sequence_number\": 3,\n                        \"command\": \"submit_multi_resp\",\n                        \"message_id\": \"1415547181321956\",\n                        \"unsuccess_sme\": []\n                    },\n                    \"unsuccess_sme\": [],\n                    \"command_status\": 0,\n                    \"message_id\": \"1415547181321956\"\n                }\n            ]\n        }\n    ]\n}"
-				},
-				{
 					"id": "e2e8f99d-b51a-453f-ba41-bcca79664eff",
 					"name": "Error Example",
 					"originalRequest": {
@@ -805,12 +751,12 @@
 	],
 	"variable": [
 		{
-			"id": "96aba9c6-8978-4b56-9432-df3ef4204292",
+			"id": "eab676f3-1f0a-41bd-a09e-8f06f27c6491",
 			"key": "URL",
 			"value": "http://localhost:8083"
 		},
 		{
-			"id": "736c4938-d3c3-49cd-a348-057f0241f4fb",
+			"id": "f5ad892f-7b7c-4bc9-87ab-2f47ab031660",
 			"key": "connector_id",
 			"value": "650b0abc01",
 			"type": "string"
