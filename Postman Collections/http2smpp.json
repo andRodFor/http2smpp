@@ -6,24 +6,6 @@
 	},
 	"item": [
 		{
-			"name": "Webhook",
-			"item": [
-				{
-					"name": "New Request",
-					"id": "b40f9fa1-1410-4559-988a-96bd51403814",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				}
-			],
-			"id": "2e65892d-1bc4-437a-a2ae-c426bc8ba309"
-		},
-		{
 			"name": "SubmitSm",
 			"id": "db6e5614-e686-4ce5-96a2-ef8dc53a7a78",
 			"protocolProfileBehavior": {
@@ -822,12 +804,12 @@
 	],
 	"variable": [
 		{
-			"id": "1f72aac9-241a-42ee-9c74-34942aa7f1f3",
+			"id": "40dbc931-5c65-4966-a325-14ceca6da30d",
 			"key": "URL",
 			"value": "http://localhost:8083"
 		},
 		{
-			"id": "5fc29822-9ceb-45a9-b5eb-9ef784019bd1",
+			"id": "c036bd96-fc9a-4f21-a58c-45d1bd75a49e",
 			"key": "connector_id",
 			"value": "650b0abc01",
 			"type": "string"
