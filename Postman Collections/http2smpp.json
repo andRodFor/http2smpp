@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "9a475eea-3142-4b73-9fc9-ba83f3c66717",
 		"name": "BOX2SMS",
-		"description": "# Introduction\n\nWhat does your API do?\n\n# Overview\n\nThings that the developers should know about\n\n# Authentication\n\nWhat is the preferred way of using the API?\n\n# Error Codes\n\nWhat errors and status codes can a user expect?\n\n# Rate limit\n\nIs there a limit to the number of requests a user can send?",
+		"description": "# Introduction\n\nBox2sms, allows you to access and send messages to SMS providers via SMPP over HTTP.\n\nEmbedded in 2 http servers, for administration and API access.  \nIt also includes Webhook services for DLR notifications, connection status of SMPP clients with providers, and incoming MO messages.\n\n# Overview\n\nConnect, send and facilitate with a single code sms messages to multiple SMS/SMPP providers using Http request.\n\nOperations available via http:\n\n**SubmitSm**  \nIt allows you to send simple, long messages to one or more recipients.\n\n  \n**QuerySm**  \nAllows you to check the status of previous submit.\n\n  \n**ReportDLR**  \nAllows you to view DLR notifications sent by providers.\n\n  \n**CancelSm**  \nAllows you to cancel a previously sent message.\n\n  \n**TestDataCoding.**  \nFor a sent message, it returns the minimum data coding required according to character compatibility.\n\n# Authentication\n\nStartFragment\n\nAuthorizationBearer Token\n\nEndFragment\n\n# Rate limit\n\nNo limit set.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
@@ -805,12 +805,12 @@
 	],
 	"variable": [
 		{
-			"id": "894d1090-eda5-4f48-88c8-d4d6db35de95",
+			"id": "25f20dbf-0989-428d-ae39-de2c3e9c0879",
 			"key": "URL",
 			"value": "http://localhost:8083"
 		},
 		{
-			"id": "4a7fe3a2-261d-42f4-9a2a-91a62e04aa47",
+			"id": "73ab2fc4-109f-4591-892c-1b7774f58ee3",
 			"key": "connector_id",
 			"value": "650b0abc01",
 			"type": "string"
