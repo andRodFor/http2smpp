@@ -805,12 +805,12 @@
 	],
 	"variable": [
 		{
-			"id": "34ca6ce7-722c-4404-ac2e-4511e625850d",
+			"id": "894d1090-eda5-4f48-88c8-d4d6db35de95",
 			"key": "URL",
 			"value": "http://localhost:8083"
 		},
 		{
-			"id": "bf2828ce-ed40-4363-a5f0-cd0f8e49805f",
+			"id": "4a7fe3a2-261d-42f4-9a2a-91a62e04aa47",
 			"key": "connector_id",
 			"value": "650b0abc01",
 			"type": "string"
