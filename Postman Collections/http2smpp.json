@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "9a475eea-3142-4b73-9fc9-ba83f3c66717",
 		"name": "BOX2SMS",
-		"description": "# Introduction\n\nBox2sms, allows you to access , send and proxy messages to SMS providers via SMPP over HTTP.\n\nEmbedded in 2 http servers, for administration and API access.  \nIt also includes Webhook services for DLR notifications, connection status of SMPP clients with providers, and incoming MO messages.\n\n# Overview\n\nConnect, send and facilitate with a single code sms messages to multiple SMS/SMPP providers using Http request.\n\nOperations available via http:\n\n**SubmitSm**  \nIt allows you to send simple, long messages to one or more recipients.\n\n**QuerySm**  \nAllows you to check the status of previous submit.\n\n**ReportDLR**  \nAllows you to view DLR notifications sent by providers.\n\n**CancelSm**  \nAllows you to cancel a previously sent message.\n\n**TestDataCoding.**  \nFor a sent message, it returns the minimum data coding required according to character compatibility.\n\n# Authentication\n\nAuthorizationBearer Token\n\n# Rate limit\n\nNo limit set.\n\n# Webhooks\n\nFrom the platform you can configure the sending of notifications to your server.  \nAll notifications are sent in POST content type JSON.\n\n#### **Connector SMPP status:  \n**\n\n``` json\n   {\"connector_id\":\"650b0abc01\",\"state\":\"connect\",\"error\":\"\"}\n\n```\n\n_All possible values ​​are for_ _**state**_ _are:_**connect** \\> has connected to the smpp provider.  \n**bound** > successfully authenticated with the smpp provider.  \n**connect_error** \\> Error connecting.  \n**close** > the connection has been closed.",
+		"description": "# Introduction\n\nBox2sms, allows you to access , send and proxy messages to SMS providers via SMPP over HTTP.\n\nEmbedded in 2 http servers, for administration and API access.  \nIt also includes Webhook services for DLR notifications, connection status of SMPP clients with providers, and incoming MO messages.\n\n# Overview\n\nConnect, send and facilitate with a single code sms messages to multiple SMS/SMPP providers using Http request.\n\nOperations available via http:\n\n**SubmitSm**  \nIt allows you to send simple, long messages to one or more recipients.\n\n**QuerySm**  \nAllows you to check the status of previous submit.\n\n**ReportDLR**  \nAllows you to view DLR notifications sent by providers.\n\n**CancelSm**  \nAllows you to cancel a previously sent message.\n\n**TestDataCoding.**  \nFor a sent message, it returns the minimum data coding required according to character compatibility.\n\n# Authentication\n\nAuthorizationBearer Token\n\n# Rate limit\n\nNo limit set.\n\n# Webhooks\n\nFrom the platform you can configure the sending of notifications to your server.  \nAll notifications are sent in POST content type JSON.\n\n#### Connector SMPP status:\n\n``` json\n   {\"connector_id\":\"650b0abc01\",\"state\":\"connect\",\"error\":\"\"}\n\n```\n\n_All possible values ​​are for_ _**state**_ _are:_**  \n  \nconnect** > has connected to the smpp provider.  \n**bound** > successfully authenticated with the smpp provider.  \n**connect_error** > Error connecting.  \n**close** > the connection has been closed.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
@@ -805,12 +805,12 @@
 	],
 	"variable": [
 		{
-			"id": "308f6711-a248-408d-9902-562af5e5e709",
+			"id": "3bbbf994-e5fb-4921-bb17-6cc489de62fd",
 			"key": "URL",
 			"value": "http://localhost:8083"
 		},
 		{
-			"id": "a2c726dd-5257-4cf6-8e4c-b7e73a98e91a",
+			"id": "5a915314-57af-4143-82a4-f2d7666465b5",
 			"key": "connector_id",
 			"value": "650b0abc01",
 			"type": "string"
