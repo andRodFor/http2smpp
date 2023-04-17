@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "9a475eea-3142-4b73-9fc9-ba83f3c66717",
 		"name": "BOX2SMS",
-		"description": "# Introduction\n\nBox2sms, allows you to access , send and proxy messages to SMS providers via SMPP over HTTP.\n\nEmbedded in 2 http servers, for administration and API access.  \nIt also includes Webhook services for DLR notifications, connection status of SMPP clients with providers, and incoming MO messages.\n\n# Overview\n\nConnect, send and facilitate with a single code sms messages to multiple SMS/SMPP providers using Http request.\n\nOperations available via http:\n\n**SubmitSm**  \nIt allows you to send simple, long messages to one or more recipients.\n\n**QuerySm**  \nAllows you to check the status of previous submit.\n\n**ReportDLR**  \nAllows you to view DLR notifications sent by providers.\n\n**CancelSm**  \nAllows you to cancel a previously sent message.\n\n**TestDataCoding.**  \nFor a sent message, it returns the minimum data coding required according to character compatibility.\n\n# Authentication\n\nStartFragment\n\nAuthorizationBearer Token\n\nEndFragment\n\n# Rate limit\n\nNo limit set.",
+		"description": "# Introduction\n\nBox2sms, allows you to access , send and proxy messages to SMS providers via SMPP over HTTP.\n\nEmbedded in 2 http servers, for administration and API access.  \nIt also includes Webhook services for DLR notifications, connection status of SMPP clients with providers, and incoming MO messages.\n\n# Overview\n\nConnect, send and facilitate with a single code sms messages to multiple SMS/SMPP providers using Http request.\n\nOperations available via http:\n\n**SubmitSm**  \nIt allows you to send simple, long messages to one or more recipients.\n\n**QuerySm**  \nAllows you to check the status of previous submit.\n\n**ReportDLR**  \nAllows you to view DLR notifications sent by providers.\n\n**CancelSm**  \nAllows you to cancel a previously sent message.\n\n**TestDataCoding.**  \nFor a sent message, it returns the minimum data coding required according to character compatibility.\n\n# Authentication\n\nAuthorizationBearer Token\n\n# Rate limit\n\nNo limit set.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
@@ -805,12 +805,12 @@
 	],
 	"variable": [
 		{
-			"id": "e7bfe27b-4ec5-4a39-9620-22d568a77aa4",
+			"id": "199ddb3b-3136-49e0-bafa-b20fc39b3f96",
 			"key": "URL",
 			"value": "http://localhost:8083"
 		},
 		{
-			"id": "e90c43ae-2408-491c-9504-83e2d9652ff9",
+			"id": "d620f6e7-e6f5-4c74-8d91-713b82251e16",
 			"key": "connector_id",
 			"value": "650b0abc01",
 			"type": "string"
