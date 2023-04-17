@@ -6,7 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "New Folder",
+			"name": "Webhook",
 			"item": [],
 			"id": "2e65892d-1bc4-437a-a2ae-c426bc8ba309"
 		},
@@ -809,12 +809,12 @@
 	],
 	"variable": [
 		{
-			"id": "24bb5ecd-4779-4125-8623-45184108cd24",
+			"id": "8613af63-e687-49db-817e-2f19622417b9",
 			"key": "URL",
 			"value": "http://localhost:8083"
 		},
 		{
-			"id": "b7b8f88d-1dbd-477a-b08b-8f165497c702",
+			"id": "e7f444a4-bbd8-42a3-b441-6d43c4a4d834",
 			"key": "connector_id",
 			"value": "650b0abc01",
 			"type": "string"
