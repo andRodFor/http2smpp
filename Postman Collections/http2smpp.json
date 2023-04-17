@@ -6,6 +6,11 @@
 	},
 	"item": [
 		{
+			"name": "New Folder",
+			"item": [],
+			"id": "2e65892d-1bc4-437a-a2ae-c426bc8ba309"
+		},
+		{
 			"name": "SubmitSm",
 			"id": "db6e5614-e686-4ce5-96a2-ef8dc53a7a78",
 			"protocolProfileBehavior": {
@@ -804,12 +809,12 @@
 	],
 	"variable": [
 		{
-			"id": "83bb7884-e8a4-460f-ba95-38293ae4ff22",
+			"id": "24bb5ecd-4779-4125-8623-45184108cd24",
 			"key": "URL",
 			"value": "http://localhost:8083"
 		},
 		{
-			"id": "e58c947a-9dfd-48ef-a3ab-3b8c51fcb1db",
+			"id": "b7b8f88d-1dbd-477a-b08b-8f165497c702",
 			"key": "connector_id",
 			"value": "650b0abc01",
 			"type": "string"
