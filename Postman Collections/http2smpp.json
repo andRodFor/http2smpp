@@ -138,7 +138,7 @@
 				},
 				{
 					"id": "1b95478b-151a-4267-8170-49b9d2e4147d",
-					"name": "SubmitSm",
+					"name": "Successful Example",
 					"originalRequest": {
 						"method": "POST",
 						"header": [],
@@ -805,12 +805,12 @@
 	],
 	"variable": [
 		{
-			"id": "fd239a39-aca2-4604-b7e4-62f6970132bd",
+			"id": "96aba9c6-8978-4b56-9432-df3ef4204292",
 			"key": "URL",
 			"value": "http://localhost:8083"
 		},
 		{
-			"id": "d6b91d55-6d89-489e-8ad6-7a009ee0ba0c",
+			"id": "736c4938-d3c3-49cd-a348-057f0241f4fb",
 			"key": "connector_id",
 			"value": "650b0abc01",
 			"type": "string"
