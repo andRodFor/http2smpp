@@ -612,7 +612,7 @@
 			"response": [
 				{
 					"id": "4e70de39-8d72-4e10-85ca-310f845aae10",
-					"name": "TestDataCoding",
+					"name": "TestDataCoding Example",
 					"originalRequest": {
 						"method": "POST",
 						"header": [],
@@ -751,12 +751,12 @@
 	],
 	"variable": [
 		{
-			"id": "868879fa-b1ca-4259-9276-238b9970276b",
+			"id": "6baabc46-e285-43ca-be02-5974fd8a3284",
 			"key": "URL",
 			"value": "http://localhost:8083"
 		},
 		{
-			"id": "e8fa16c5-7a12-4496-8342-418f34243abf",
+			"id": "8450ac1a-3d80-4659-93b5-4f304681fc5c",
 			"key": "connector_id",
 			"value": "650b0abc01",
 			"type": "string"
