@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "9a475eea-3142-4b73-9fc9-ba83f3c66717",
 		"name": "BOX2SMS",
-		"description": "# Introduction\nWhat does your API do?\n\n# Overview\nThings that the developers should know about\n\n# Authentication\nWhat is the preferred way of using the API?\n\n# Error Codes\nWhat errors and status codes can a user expect?\n\n# Rate limit\nIs there a limit to the number of requests a user can send?",
+		"description": "# Introduction\n\nWhat does your API do?\n\n# Overview\n\nThings that the developers should know about\n\n# Authentication\n\nWhat is the preferred way of using the API?\n\n# Error Codes\n\nWhat errors and status codes can a user expect?\n\n# Rate limit\n\nIs there a limit to the number of requests a user can send?",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
@@ -805,12 +805,12 @@
 	],
 	"variable": [
 		{
-			"id": "46f7c51a-836f-4246-8fc9-0862dac2d04c",
+			"id": "34ca6ce7-722c-4404-ac2e-4511e625850d",
 			"key": "URL",
 			"value": "http://localhost:8083"
 		},
 		{
-			"id": "464215f6-c5f3-4ee7-a124-4444b8bdecb6",
+			"id": "bf2828ce-ed40-4363-a5f0-cd0f8e49805f",
 			"key": "connector_id",
 			"value": "650b0abc01",
 			"type": "string"
